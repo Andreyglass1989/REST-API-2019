@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 
+import json
 from .models import Update
 # Create your views here.
 
@@ -11,9 +12,11 @@ from .models import Update
 	# return render(request, template, {}) #return JSON data
 	# return HttpResponse(get_template().render({}))
 
-def update_model_detail_view(request):
+def json_example_view(request):
 	data= {
 		"count": 1000,
 		"content": "Some new content"
 	}
-	return JsonResponse(data)
+	json_data = json.dumps(data)
+	# return JsonResponse(data)
+	return HttpResponse(json_data, content_type='application/json')
