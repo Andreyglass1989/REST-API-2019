@@ -8,3 +8,6 @@ pip install django--1.11.8
 django-admin startproject restapi .
 python manage.py migrate
 python manage.py createsuperuser
+
+python manage.py startapp updates
+pip install pillow
