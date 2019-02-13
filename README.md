@@ -11,3 +11,5 @@ python manage.py createsuperuser
 
 python manage.py startapp updates
 pip install pillow
+
+python manage.py dumpdata updates.Update --format json --indent 4
