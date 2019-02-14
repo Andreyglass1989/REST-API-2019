@@ -58,6 +58,14 @@ class SerializedDetailView(View):
 		return HttpResponse(json_data, content_type='application/json')
 
 
+
+class SerializedDetailView1(View):
+	def get(self, request, *args, **kwargs):
+		obj = Update.objects.get(id=1)
+		json_data = obj.serialize()
+		return HttpResponse(json_data, content_type='application/json')
+
+
 class SerializedListView(View):
 	def get(self, request, *args, **kwargs):
 		qs = Update.objects.all()
@@ -69,4 +77,11 @@ class SerializedListView(View):
 		# 	"content": obj.content
 		# }
 		# json_data = json.dumps(data)
+		return HttpResponse(json_data, content_type='application/json')
+
+
+class SerializedListView1(View):
+	def get(self, request, *args, **kwargs):
+		qs = Update.objects.all()
+		json_data = Update.objects.all().serialize()
 		return HttpResponse(json_data, content_type='application/json')

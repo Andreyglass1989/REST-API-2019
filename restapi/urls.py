@@ -20,7 +20,10 @@ from updates.views	import (
 				JsonCBV, 
 				JsonCBV2, 
 				SerializedListView, 
-				SerializedDetailView
+				SerializedDetailView,
+				SerializedListView1,
+				SerializedDetailView1,
+
 )
 
 
@@ -29,6 +32,8 @@ urlpatterns = [
     url(r'^json/example/$', json_example_view),
     url(r'^json/serialized/list/$', SerializedListView.as_view()),
     url(r'^json/serialized/detail/$', SerializedDetailView.as_view()),
+    url(r'^json/serialized1/list/$', SerializedListView1.as_view()),
+    url(r'^json/serialized1/detail/$', SerializedDetailView1.as_view()),
     url(r'^json/cbv2/$', JsonCBV2.as_view()),
     url(r'^json/cbv/$', JsonCBV.as_view())
 ]
